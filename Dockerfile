@@ -18,6 +18,8 @@ MAINTAINER mescanef <zone@mescanef.net>
 ENV DOMAIN domainname.org
 ENV PORT 8080
 
+# upgrade...
+RUN yum upgrade -y
 # add EPEL repo
 RUN rpm -Uvhf http://mirrors.kernel.org/fedora-epel/7/x86_64/e/epel-release-7-2.noarch.rpm 
 RUN yum install -y python-pip python-setuptools nginx sqlite3 gcc python-devel unzip wget --enablerepo=epel
