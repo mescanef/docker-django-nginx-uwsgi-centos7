@@ -52,6 +52,9 @@ RUN chmod 775 /*.sh
 
 RUN /setup.sh
 
-EXPOSE 8080
+#EXPOSE 8080
+# Since docker 1.3.0 we can use variables "anywhere". See #6054.
+EXPOSE ${PORT}
+
 CMD ["/run.sh"]
 
